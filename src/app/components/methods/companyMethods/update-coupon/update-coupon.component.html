@@ -1,0 +1,12 @@
+<div>
+        <form>
+            <input type="description" name="coupDescription" placeholder="Description" [(ngModel)]="coupon.description"/><br/>
+            <input type="category" name="category" placeholder="Category" [(ngModel)]="coupon.category"/><br/>
+            <input type="title" name="title" placeholder="Title" [(ngModel)]="coupon.title"/><br/>
+            <input type="date" value="startDate" (click)="coupon.startDate()" /><br/>
+            <input type="date" name="endDate" (click)="coupon.endDate()" /><br/>
+            <input type="number" name="price" (click)="coupon.price()" /><br/>
+            <input type="string" name="image" (click)="coupon.image()" /><br/>
+            
+        </form>
+    </div>

@@ -1,0 +1,11 @@
+<div>
+        <form>
+            <input type="number" placeholder="Customer Id" name="custId"[(ngModel)]= customer.id>
+            <input type="text" name="custFirstName" placeholder="Customer First Name" [(ngModel)]="customer.firstName"/><br/>
+            <input type="text" name="custLastName" placeholder="Customer Last Name" [(ngModel)]="customer.lastName"/><br/>
+            <input type="email" name="custEmail" placeholder="Customer Email" [(ngModel)]="customer.email"/><br/>
+            <input type="password" name="custPasswrod" placeholder="Customer password" [(ngModel)]="customer.password"/><br/>
+            <input type="button" value="Update Customer" (click)="updateCustomer(customer)" /><br/>
+            
+        </form>
+    </div>

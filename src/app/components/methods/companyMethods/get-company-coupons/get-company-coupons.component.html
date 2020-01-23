@@ -1,0 +1,73 @@
+<div>
+
+    <table *ngIf="coupons">
+        <tr class="form-group">
+           <br/> Min-Price: <input type="number" class="form-control" placeholder="search by price"
+                [(ngModel)]="searchPrice" />
+        <tr class="form-group">
+            Category filter: <select type="category" class="form-control" placeholder="search by category"
+                [(ngModel)]="searchTerm">
+                <option value="ELECTRICITY">Electricity</option>
+                <option value="RESTURANT">Resturant</option>
+                <option value="VACATION">Vacation</option>
+                <option value="FOOD">Food</option>
+                <option value="HOME">Home</option>
+                <option value="CAMPING">Camping</option>
+                <option value="MEDICAL">Medical</option>
+            </select>
+        </tr>
+        <tr>
+            <th>Title</th>
+            <th>Category</th>
+            <th>Description</th>
+            <th>Start date</th>
+            <th>End date</th>
+            <th>Amount</th>
+            <th>Price</th>
+            <th>Image</th>
+            <th></th>
+        </tr>
+
+
+        <tr *ngFor="let coupon of coupons| priceFilter:searchPrice| categoryFilter:searchTerm">
+            <td>{{coupon.title}}</td>
+            <td>{{coupon.category}}</td>
+            <td>{{coupon.description}}</td>
+            <td>{{coupon.startDate}}</td>
+            <td>{{coupon.endDate}}</td>
+            <td>{{coupon.amount}}</td>
+            <td>{{coupon.price}}</td>
+            <td>{{coupon.image}}</td>
+            <td><input type="button" value="delete" (click)="deleteCoupon(coupon.id)" /><br /></td>
+            <td><input type="button" value="update" name="update" (click)="editorEnabler(coupon)"></td>
+        </tr>
+        <tr *ngIf="updater==true">
+            <td>
+                <form>
+                    <input type="description" name="coupDescription" placeholder="Description"
+                        [(ngModel)]="coupon.description" /><br />
+                    <select name="category" [(ngModel)]="coupon.category">
+                        <option value="ELECTRICITY">Electricity</option>
+                        <option value="RESTURANT">Resturant</option>
+                        <option value="VACATION">Vacation</option>
+                        <option value="FOOD">Food</option>
+                        <option value="HOME">Home</option>
+                        <option value="CAMPING">Camping</option>
+                        <option value="MEDICAL">Medical</option>
+                    </select>
+                    <input type="description" name="description" placeholder="description"
+                        [(ngModel)]="coupon.description" /><br />
+                    <input type="title" name="title" placeholder="Title" [(ngModel)]="coupon.title" /><br />
+                    <input type="date" name="startDate" placeholder="startDate" [(ngModel)]="coupon.startDate" /><br />
+                    <input type="date" name="endDate" placeholder="endDate" [(ngModel)]="coupon.endDate" /><br />
+                    <input type="number" name="price" placeholder="price" [(ngModel)]="coupon.price" /><br />
+                    <input type="string" name="image" placeholder="image" [(ngModel)]="coupon.image" /><br />
+                    <input type="button" value="Update Coupon" (click)="updateCoupon(coupon)" /><br />
+
+                </form>
+            </td>
+        </tr>
+
+    </table>
+
+</div>

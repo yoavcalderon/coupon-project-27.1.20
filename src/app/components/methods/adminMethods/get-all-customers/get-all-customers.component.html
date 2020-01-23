@@ -1,0 +1,31 @@
+<div>
+        <table *ngIf= "customers">
+            <tr>
+                <th>First Name</th><br/>
+                <th>Last Name</th><br/>
+                <th>Email</th><br/>
+                <th></th>
+            </tr>
+            <tr *ngFor="let customer of customers">
+                <td>{{customer.firstName}}</td><br/>
+                <td>{{customer.lastName}}</td><br/>
+                <td>{{customer.email}}</td><br/>
+                <td><input type="button" value="delete" name="delete" (click)="deleteCustomer(customer)"/><br/></td>
+                <td><input type="button" value="update" name="update" (click)="editorEnabler(customer)"></td>
+
+            </tr>
+            <tr *ngIf= "updater == true">
+                <td>
+                        <form>
+                                <input type="text" name="custFirstName" placeholder="Customer First Name" [(ngModel)]="customer.firstName"/><br/>
+                                <input type="text" name="custLastName" placeholder="Customer Last Name" [(ngModel)]="customer.lastName"/><br/>
+                                <input type="email" name="custEmail" placeholder="Customer Email" [(ngModel)]="customer.email"/><br/>
+                                <input type="password" name="custPasswrod" placeholder="Customer password" [(ngModel)]="customer.password"/><br/>
+                                <input type="button" value="Update Customer" (click)="updateCustomer(customer)" /><br/>
+                                
+                            </form>
+                </td>
+            </tr>
+    
+        </table>
+    </div>

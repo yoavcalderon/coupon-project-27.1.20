@@ -1,0 +1,16 @@
+a{
+    font-size: x-large;
+    color: black;
+    margin: 10px;
+    display: block;
+}
+a:hover{
+    color: midnightblue;
+    animation: fade 1s;
+}
+
+
+@keyframes fade{
+    from {opacity:0.8;}
+    to {opacity:1;}
+}

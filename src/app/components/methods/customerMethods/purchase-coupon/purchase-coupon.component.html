@@ -1,0 +1,46 @@
+<div>
+
+    <table *ngIf="coupons">
+        <tr class="form-group">
+            <br /> Min-Price: <input type="number" class="form-control" placeholder="search by price"
+                [(ngModel)]="searchPrice" />
+        <tr class="form-group">
+            Category filter: <select type="category" class="form-control" placeholder="search by category"
+                [(ngModel)]="searchTerm">
+                <option value="ELECTRICITY">Electricity</option>
+                <option value="RESTURANT">Resturant</option>
+                <option value="VACATION">Vacation</option>
+                <option value="FOOD">Food</option>
+                <option value="HOME">Home</option>
+                <option value="CAMPING">Camping</option>
+                <option value="MEDICAL">Medical</option>
+            </select>
+        </tr>
+        <tr>
+            <th>Title</th>
+            <th>Category</th>
+            <th>Description</th>
+            <th>Start date</th>
+            <th>End date</th>
+            <th>Amount</th>
+            <th>Price</th>
+            <th>Image</th>
+            <th></th>
+        </tr>
+
+
+        <tr *ngFor="let coupon of coupons| priceFilter:searchPrice| categoryFilter:searchTerm">
+            <td>{{coupon.title}}</td>
+            <td>{{coupon.category}}</td>
+            <td>{{coupon.description}}</td>
+            <td>{{coupon.startDate}}</td>
+            <td>{{coupon.endDate}}</td>
+            <td>{{coupon.amount}}</td>
+            <td>{{coupon.price}}</td>
+            <td>{{coupon.image}}</td>
+            <td><input type="button" value="purchaseCoupon" (click)="purchaseCoupon(coupon)" /><br /></td>
+        </tr>
+
+    </table>
+
+</div>

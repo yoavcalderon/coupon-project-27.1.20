@@ -1,0 +1,30 @@
+section{
+    height: 100vh;
+    background-color: rgb(218, 218, 218);
+    text-align: center;
+    box-sizing: border-box;
+    display: grid;
+    grid-template-rows: 23% 70% 7%;
+    grid-auto-columns: repeat(12, 1fr)
+}
+header{
+    grid-column: span 12;
+    border: 2px solid black;
+    font-family: 'UnifrakturCook', cursive;
+}
+
+    
+
+main{
+    grid-column: span 12;
+    border: 2px solid black;
+    font-family: 'Pirata One', cursive;
+    
+    
+}
+footer{
+    grid-column: span 12;
+    border: 2px solid black;
+    font-family: 'UnifrakturMaguntia', cursive;
+
+}

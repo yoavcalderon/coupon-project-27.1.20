@@ -1,0 +1,23 @@
+a{
+    font-size: 5vh;
+    color: black;
+    margin: 0 10px;
+    text-decoration: none;
+    display: inline-block;
+    transform: translateY(50%);
+}
+a:hover{
+    color:midnightblue;
+    animation: fade 8s;
+}
+div{
+    border: 3px black;
+}
+
+
+
+@keyframes fade{
+
+    from {opacity:0.6;}
+    to {opacity:1;}
+}

@@ -1,0 +1,9 @@
+<div>
+    <form>
+        <input type="name" name="compName" placeholder="Company Name" [(ngModel)]="company.name"/><br/>
+        <input type="email" name="compEmail" placeholder="Company Email" [(ngModel)]="company.email"/><br/>
+        <input type="password" name="password" placeholder="password" [(ngModel)]="company.password"/><br/>
+        <input type="button" value="Add Company" (click)="createCompany()" /><br/>
+        
+    </form>
+</div>

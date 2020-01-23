@@ -1,0 +1,26 @@
+<div>
+    <table *ngIf= "companies">
+        <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th></th>
+        </tr>
+        <tr *ngFor="let company of companies">
+            <td>{{company.name}}</td>
+            <td>{{company.email}}</td>
+            <td><input type="button" value="delete"  (click)="deleteCompany(company.id)"/><br/></td>
+            <td><input type="button" value="update" name="update" (click)="editorEnabler(company)"></td>
+        </tr>
+        <tr *ngIf = "updater==true">
+            <td>
+                    <form>
+                            <input type="email" name="companyEmail"  [(ngModel)]="company.email"/><br/>
+                            <input type="password" name="companyPassword" placeholder="Company password" [(ngModel)]="company.password"/><br/>
+                            <input type="button" value="updateCompany" (click)="updateCompany(company)" /><br/>
+                        </form>
+            </td>
+        </tr>
+
+    </table>
+     
+    </div>

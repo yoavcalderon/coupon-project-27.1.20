@@ -1,0 +1,20 @@
+<div>
+    Welcome To Our Coupon System, Today is {{currentDate| date: 'EEE, MMM dd, yyyy'}}
+        <h1></h1>
+    <form>
+            <div>
+                 <br/><br/>
+                </div>
+        <input type="text" name="email" placeholder="email" [(ngModel)]="emailVar" required/><br />
+        <input type="text" name="password" placeholder="password" [(ngModel)]="passwordVar" required/><br />
+        <select name="type" [(ngModel)]="typeVar">
+            <option value="ADMINISTRATOR">Admin</option>
+            <option value="CUSTOMER">Customer</option>
+            <option value="COMPANY">Company</option>
+        </select>
+        <input type="button" value="login" (click)="login()" />
+    </form>
+
+    <br/><br/>
+    <router-outlet></router-outlet>
+</div>

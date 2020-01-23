@@ -1,0 +1,10 @@
+<div>
+        <input type="number" #id placeholder="Company Id" name="compId">
+        <input type="button" value="enter id" (click)="loadComp(id.value)" /><br/>
+        <form>
+            <input type="text" name="companyName"  [(ngModel)]="company.name"/><br/>
+            <input type="email" name="companyEmail"  [(ngModel)]="company.email"/><br/>
+            <input type="password" name="companyPassword" placeholder="Company password" [(ngModel)]="company.password"/><br/>
+            <input type="button" value="Update Company" (click)="updateCompany(company)" /><br/>
+        </form>
+    </div>

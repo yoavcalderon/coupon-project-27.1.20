@@ -1,0 +1,10 @@
+<div>
+        <form>
+            <input type="firstName" name="custFirstName" placeholder="Customer First Name" [(ngModel)]="customer.firstName"/><br/>
+            <input type="lastName" name="custLastName" placeholder="Customer Last Name" [(ngModel)]="customer.lastName"/><br/>
+            <input type="email" name="custEmail" placeholder="Customer email" [(ngModel)]="customer.email"/><br/>
+            <input type="password" name="custPass" placeholder="Customer password" [(ngModel)]="customer.password"/><br/>
+            <input type="button" value="Add Customer" (click)="createCustomer()" /><br/>
+            
+        </form>
+    </div>

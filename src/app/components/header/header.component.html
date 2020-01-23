@@ -1,0 +1,38 @@
+<div>
+<nav *ngIf="navChooser=='ADMINISTRATOR'">
+    <a (click)= "logout()">Log Out</a>
+    <a routerLink="add-company"> Add A Company</a>
+    <a routerLink="add-customer"> Add A Customer</a>
+    <a routerLink="get-all-companies"> My Companies</a>
+    <a routerLink="get-all-customers"> My Customers</a>
+    <!-- <a routerLink="get-one-company"> Show A Company</a>
+    <a routerLink="get-one-customer"> Show A Customer</a> -->
+
+
+</nav>
+<nav *ngIf="navChooser=='COMPANY'">
+    <a (click)= "logout()">Log Out</a>
+    <a routerLink="add-coupon">Add coupon</a>
+    <a routerLink="get-company-coupons">My Company Coupons</a>
+
+
+</nav>
+<nav *ngIf="navChooser=='CUSTOMER'">
+        <a (click)= "logout()">Log Out</a>
+        <a routerLink="get-customer-coupons">My Coupons</a>
+        <a routerLink="get-customer-details">Show my info</a>
+        <a routerLink="purchase-coupon">Purchase Coupon</a>
+    
+
+</nav>
+<nav *ngIf="!navChooser">
+<a routerLink="login">Please Log in</a>
+    
+
+</nav>
+
+
+
+
+
+</div>

@@ -1,0 +1,26 @@
+<div>
+        <form>
+            Coupon Description: <br/> <input type="description" name="coupDescription" placeholder="Coupon Description" [(ngModel)]="coupon.description"/><br/>
+            Coupon Category:<br/> <select name="type" [(ngModel)]="coupon.category">
+                <option value="ELECTRICITY">Electricity</option>
+                <option value="RESTURANT">Resturant</option>
+                <option value="VACATION">Vacation</option>
+                <option value="FOOD">Food</option>
+                <option value="HOME">Home</option>
+                <option value="CAMPING">Camping</option>
+                <option value="MEDICAL">Medical</option>
+            </select>
+            <br/>
+            
+            
+         
+            Coupon Title:    <br/><input type="title" name="title" placeholder="Title" [(ngModel)]="coupon.title"/><br/>
+            Coupon Price:    <br/><input type="number" name="price" placeholder="coupon price" [(ngModel)]="coupon.price"/><br/>
+            Coupon image:   <br/> <input type="string" name="image" placeholder="coupon image" [(ngModel)]="coupon.image"/><br/>
+            Coupon amount:   <br/> <input type="number" name="amount" placeholder="coupon amount" [(ngModel)]="coupon.amount"/><br/>
+            Start Date:      <br/><input type="date" name="startDate"  [(ngModel)]="coupon.startDate" /><br/>
+            End Date:        <br/><input type="date" name="endDate"  [(ngModel)]="coupon.endDate" /><br/>
+            <input type="button" value="Add Coupon" (click)="createCoupon()" /><br/>
+            
+        </form>
+    </div>
